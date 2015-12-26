@@ -1,5 +1,5 @@
 Todos.Todoparham = DS.Model.extend({
-  title: DS.attr('str'),
+title: DS.attr('string'),
   isCompleted: DS.attr('boolean')
 });
 
