@@ -1,8 +1,8 @@
 {
     "name": "ember-tutorial",
     "dependencies": {
-        "ember": "1.6.1",
-        "ember-data": "1.0.0-beta.8",
+        "ember": "1.8.1",
+        "ember-data": "1.0.0-beta.11",
         "jquery": "1.11.2",
         "handlebars": "1.3.0"    
     }
