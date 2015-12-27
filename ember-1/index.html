@@ -21,9 +21,13 @@
         <section id="main">
           <ul id="todo-list">
             {{#each todokalas in model itemController="todoparham"}}
-              <li {{bind-attr class="todokalas.isCompleted:completed"}}>
-                {{input type="checkbox" checked=todokalas.isCompleted class="toggle" }}
-                <label>{{todokalas.title}}</label><button class="destroy"></button>
+              <li {{bind-attr class="todokalas.isCompleted:completed todokalas.isEditing:editing"}}>
+                {{#if todokalas.isEditing}}
+                  {{edit-todo class="edit" value=todokalas.title focus-out="acceptChanges" insert-newline="acceptChanges"}}
+                {{else}}
+                  {{input type="checkbox" checked=todokalas.isCompleted class="toggle" }}
+                  <label {{action "editTodo" on="doubleClick"}}>{{todokalas.title}}</label><button class="destroy"></button>
+                {{/if}} 
               </li>
             {{/each}}
           </ul>
@@ -66,5 +70,6 @@
     <script src="js/models/todo.js"></script>
     <script src="js/controllers/todos_controller.js"></script>
     <script src="js/controllers/todoparham_controller.js"></script>
+    <script src="js/views/edit_todo_view.js"></script>
   </body>
 </html>
